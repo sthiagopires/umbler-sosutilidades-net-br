@@ -1,6 +1,5 @@
 <?php
 session_start();
-ob_start();
 include_once('config2.php');
 include_once('config.php');
 require 'classes/usuarios.class.php';

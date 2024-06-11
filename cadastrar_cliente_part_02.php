@@ -1,7 +1,5 @@
-
 <?php
  session_start();
- ob_start();
 include_once('config2.php');
 include_once('config.php');
 include_once('contador.php');
