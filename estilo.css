@@ -1,0 +1,176 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    padding-top: 10px;
+    
+    
+    
+}
+
+    
+
+.empresa {
+    padding-top:  10px;
+    padding-left: 23px;
+    text-align: left;
+    margin-bottom: 2px;
+}
+.empresa2 {
+    width: 200px;
+    line-height: 1.5;
+    margin-top: 0px;
+    padding-left: 23px;
+    text-align: left;
+    margin-bottom: 3px;
+}
+.empresa02 {
+    margin-left: 8px;
+    width: 190px;
+    border-bottom: 1px dashed black;
+    margin-top: 2px;
+    
+}
+
+.empresa03 {
+    font-size: 8pt;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.empresa04, .divisor_pagamento, .divisor_pagamento2, .divisor_pagamento3 {
+    margin-left: 8px;
+    border-bottom: 1px dashed black;
+    margin-top: 2px;
+    width: 190px;
+    margin-bottom: 3px;
+}
+
+.beneficiario, .pagador, .pagador2, .autenticacao2, .data_vencimento, .valor_documento, .valor_juros, .valor_cobrado{
+    margin-bottom: 2px;
+}
+.beneficiario2, .pagador2,.cpf, .data_vencimento, .valor_documento, .valor_juros, .valor_cobrado, .mensagem {
+    margin-top: 2px;
+}
+.divisor_pagamento2 {
+    margin-left: 8px;
+    margin-bottom: 1px;
+    margin-top: 4px;
+}
+.divisor_pagamento3 {
+    margin-left: 8px;
+    margin-bottom: 10px;
+}
+.divisor_pagamento3 {
+    margin-left: 8px;
+    margin-bottom: 4px;
+}
+.mensagem, .mensagem2 {
+    margin-top: 3px;
+    margin-bottom: 4px;
+    
+}
+
+.beneficiario2{
+    font-size: 7.5pt;
+}
+
+.fechar2 {
+    position: absolute;
+    font-weight: bold; 
+    top: 81%;
+    right: 2%;
+    background-color: white;
+    color: black;
+    width: 206px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #a7a3a3;
+    cursor: pointer;
+}
+
+.fechar3 {
+    
+    font-weight: bold; 
+    position: absolute;
+    top: 90%;
+    right: 2%;
+    background-color: black;
+    color: white;
+    width: 206px;
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    outline: none !important;
+    
+    
+   
+}
+
+.modal{
+   
+    word-break: break-all;
+    
+    margin-top: 30px;
+    font-weight: bold; /*LETRA*/
+    font-size: 6.5pt;
+    text-align: center;
+    padding: 2px;
+    padding-top: 30px;
+    margin: auto;
+    width: 57mm;
+    height: 540px;
+    background-color: white;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+a {
+    outline: none;
+    color: white;
+}
+
+.codigo_barras {
+    padding-bottom: 2px;
+}
+.data_vencimento {
+    padding-top: 2px;
+}
+
+@media only print{
+    .fechar2, .fechar3{
+        display: none;
+    }
+
+    
+}
+
+@media only print{
+    .modal{
+   
+        word-break: break-all;
+        
+       
+        
+        font-weight: bold; /*LETRA*/
+        font-size: 6.5pt;
+        text-align: center;
+        padding: 2px;
+        padding-top: 30px;
+        
+        width: 57mm;
+        
+        
+         }
+}
+
