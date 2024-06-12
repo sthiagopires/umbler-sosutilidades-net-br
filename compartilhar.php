@@ -3,28 +3,33 @@ session_start();
 
 if(!isset($_SESSION['logado'])) {
 	header("Location: login.php");
-	exit;
+	die();
 }
 
 $id= $_GET['id'];
 $hoje = date('d/m/Y');
+$info = $contato->getInfo($id);
+
+if(!empty($_GET['id'])){
+
+  
+  if(empty($info['codigo_barras'])) {
+    
+    header("Location: index.php?search=$hoje");
+      die(); 
+  }
+    
+  }else{
+    
+    header("Location: index.php?search=$hoje");
+     die();
+  }
+
+
 
 
 $contato = new Contato();
-if(!empty($_GET['id'])){
 
-$info = $contato->getInfo($id);
-if(empty($info['codigo_barras'])) {
-  
-  header("Location: index.php?search=$hoje");
-    die(); 
-}
-  
-}else{
-  
-  header("Location: index.php?search=$hoje");
-   die();
-}
 
 include_once 'contato.class.php';
 include_once('config2.php');
