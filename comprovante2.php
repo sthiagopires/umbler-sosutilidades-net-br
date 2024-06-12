@@ -1,14 +1,18 @@
 <?php 
 session_start();
+
+if(!isset($_SESSION['logado'])) {
+	header("Location: login.php");
+	die();
+}
+
+
+
 include_once('config2.php');
 include_once('config.php');
 require 'classes/usuarios.class.php';
 
 
-if(!isset($_SESSION['logado'])) {
-	header("Location: login.php");
-	exit;
-}
 
 $usuarios = new Usuarios($pdo);
 $usuarios->setUsuario($_SESSION['logado']);
@@ -24,7 +28,7 @@ if(!empty($_GET['id'])){
 $info = $contato->getInfo($id);
 if(empty($info['codigo_barras'])) {
     header("Location: index.php");
-    exit; 
+    die(); 
 }
   
 }

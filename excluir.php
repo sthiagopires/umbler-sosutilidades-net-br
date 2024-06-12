@@ -1,38 +1,26 @@
 <?php
 session_start();
-include_once('config2.php');
-include_once('config.php');
-require 'classes/usuarios.class.php';
 
+$hoje = date('d/m/Y');
 
 if(!isset($_SESSION['logado'])) {
-    $hoje = date('d/m/Y');
+    
     header("Location: index.php?search=$hoje");
-	exit;
+	die();
 }
 
-$usuarios = new Usuarios($pdo);
-$usuarios->setUsuario($_SESSION['logado']);
+if(isset($_POST['excluir'])) {
 
-include 'contato.class.php';
-
-$contato = new Contato();
-
-   
-   ?>
-   <?php
-   
-   if(isset($_POST['excluir'])) {
-
-    $hoje = date('d/m/Y');
+    
     header("Location: index.php?search=$hoje");
+    die();
    
     if($contato) { ?>
         
         <?php
-		        $hoje = date('d/m/Y');
-                header("Location: index.php?search=$hoje");
-        die();
+          header("Location: index.php?search=$hoje");
+          die();
+        
     }
 	
 }
@@ -49,6 +37,26 @@ if(isset($_POST['confirmar'])) {
     }
 	
 }
+
+include_once('config2.php');
+include_once('config.php');
+require 'classes/usuarios.class.php';
+
+
+
+
+$usuarios = new Usuarios($pdo);
+$usuarios->setUsuario($_SESSION['logado']);
+
+include 'contato.class.php';
+
+$contato = new Contato();
+$hoje = date('d/m/Y');
+   
+   ?>
+   <?php
+   
+
 
 function formatar_data($data){
     return implode('/', array_reverse(explode('-', $data)));

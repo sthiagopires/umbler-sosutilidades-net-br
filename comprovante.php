@@ -1,37 +1,42 @@
 <?php 
 session_start();
-include_once('config2.php');
-include_once('config.php');
-require 'classes/usuarios.class.php';
 
+$hoje = date('d/m/Y');
+
+$contato = new Contato();
+if(!empty($_GET['id'])){
+ 
+if(empty($info['codigo_barras'])) {
+    
+    header("Location: index.php?search=$hoje");
+    die(); 
+}
+  
+}else{
+    
+    header("Location: index.php?search=$hoje");
+   die();
+}
 
 if(!isset($_SESSION['logado'])) {
 	header("Location: login.php");
-	exit;
+	die();
 }
+
+
+
+include_once('config2.php');
+include_once('config.php');
+require 'classes/usuarios.class.php';
+include 'contato.class.php';
+
+
+
 
 $usuarios = new Usuarios($pdo);
 $usuarios->setUsuario($_SESSION['logado']);
 
 
-
-include 'contato.class.php';
-
-$contato = new Contato();
-if(!empty($_GET['id'])){
-    $id= $_GET['id'];
-$info = $contato->getInfo($id);
-if(empty($info['codigo_barras'])) {
-    $hoje = date('d/m/Y');
-    header("Location: index.php?search=$hoje");
-    exit; 
-}
-  
-}else{
-    $hoje = date('d/m/Y');
-    header("Location: index.php?search=$hoje");
-   exit;
-}
 
 //require_once ('contador.php');
 ?>

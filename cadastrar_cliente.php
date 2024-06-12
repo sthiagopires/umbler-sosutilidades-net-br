@@ -1,15 +1,17 @@
 <?php
 session_start();
+
+if(!isset($_SESSION['logado'])) {
+	header("Location: login.php");
+	die();
+}
+
 include_once('config2.php');
 include_once('config.php');
 include_once('contador.php');
 require 'classes/usuarios.class.php';
 
 
-if(!isset($_SESSION['logado'])) {
-	header("Location: login.php");
-	exit;
-}
 
 $usuarios = new Usuarios($pdo);
 $usuarios->setUsuario($_SESSION['logado']);
@@ -204,10 +206,12 @@ if(count($_POST) > 0) {
   
         if($total_codigo > 0){
             $erro = "Pagamento já Realizado!";
-            header("Location: cadastrar_cliente.php");  
+            header("Location: cadastrar_cliente.php");
+            die();  
          
         }else{
-            header("Location: cadastrar_cliente_part_02.php");  
+            header("Location: cadastrar_cliente_part_02.php"); 
+            die(); 
         }
     
     
